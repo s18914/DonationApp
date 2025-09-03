@@ -1,4 +1,4 @@
-export const getFontFamily = weight => {
+export const getFontFamily = (weight: string) => {
   const baseFont = 'EuclidCircularB';
   switch (weight) {
     case '100':
