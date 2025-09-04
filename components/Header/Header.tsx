@@ -5,9 +5,14 @@ import style from './style';
 interface Props {
   title: string;
   type: number;
+  color?: string;
 }
 
-const Header: FunctionComponent<Props> = ({ title = '', type = 1 }) => {
+const Header: FunctionComponent<Props> = ({
+  title = '',
+  type = 1,
+  color = '#000000',
+}) => {
   const styleToApply = () => {
     switch (type) {
       case 1:
@@ -20,7 +25,7 @@ const Header: FunctionComponent<Props> = ({ title = '', type = 1 }) => {
   };
   return (
     <View>
-      <Text style={styleToApply()}>{title}</Text>
+      <Text style={[styleToApply(), color && { color: color }]}>{title}</Text>
     </View>
   );
 };

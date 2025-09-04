@@ -9,13 +9,17 @@ set(REACTNATIVE_MERGED_SO true)
 
 
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/" rngesturehandler_codegen_autolinked_build)
+
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-safe-area-context/android/src/main/jni/" safeareacontext_autolinked_build)
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-screens/android/src/main/jni/" rnscreens_autolinked_build)
+add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-svg/android/src/main/jni/" rnsvg_autolinked_build)
 
 set(AUTOLINKED_LIBRARIES
   
   
   react_codegen_rngesturehandler_codegen
+  
   react_codegen_safeareacontext
   react_codegen_rnscreens
+  react_codegen_rnsvg
 )
