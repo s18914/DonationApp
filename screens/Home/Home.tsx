@@ -1,19 +1,21 @@
 import React from 'react';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-
-import style from './style';
 import globalStyle from '../../assets/styles/globalStyle';
 import Header from '../../components/Header/Header';
-import Button from '../../components/Button/Button';
 import Tab from '../../components/Tab/Tab';
 import Badge from '../../components/Badge/Badge';
 import KfButton, { KFButtonTypes } from '../../components/KfButton/KfButton';
 import Search from '../../components/Search/Search';
 import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
-import { View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { horizontalScale } from '../../assets/styles/scaling';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { updateFirstName } from '../../redux/reducers/User';
 
 const Home = () => {
+  const user = useAppSelector(state => state.user);
+  const dispatch = useAppDispatch();
+
   return (
     <SafeAreaView
       style={[
@@ -23,7 +25,12 @@ const Home = () => {
         { gap: '20' },
       ]}
     >
-      <Header title={'Azzahri A.'} type={1} />
+      <Header title={user.firstName + ' ' + user.lastName} type={1} />
+      <Pressable
+        onPress={() => dispatch(updateFirstName({ firstName: 'Emi' }))}
+      >
+        <Text>Press me to change first name</Text>
+      </Pressable>
       <Tab title={'Highlight'} />
       <Tab title={'Highlight'} isInactive={true} />
       <Badge title="Environment" isInactive={false} />
