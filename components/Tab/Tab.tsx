@@ -23,7 +23,6 @@ const Tab: FunctionComponent<Prop> = ({
   };
   return (
     <Pressable
-      disabled={isInactive}
       style={[style.tab, isInactive && style.inactiveTab, tabWidth]}
       onPress={() => onPress(props.tabId)}
     >

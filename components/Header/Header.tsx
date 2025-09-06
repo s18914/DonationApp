@@ -6,12 +6,14 @@ interface Props {
   title: string;
   type: number;
   color?: string;
+  numberOfLines?: number;
 }
 
 const Header: FunctionComponent<Props> = ({
   title = '',
   type = 1,
   color = '#000000',
+  numberOfLines,
 }) => {
   const styleToApply = () => {
     switch (type) {
@@ -25,7 +27,12 @@ const Header: FunctionComponent<Props> = ({
   };
   return (
     <View>
-      <Text style={[styleToApply(), color && { color: color }]}>{title}</Text>
+      <Text
+        style={[styleToApply(), color && { color: color }]}
+        numberOfLines={numberOfLines ? numberOfLines : undefined}
+      >
+        {title}
+      </Text>
     </View>
   );
 };

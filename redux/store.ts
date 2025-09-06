@@ -10,11 +10,13 @@ import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import User from './reducers/User';
 import Categories from './reducers/Categories';
+import Donations from './reducers/Donations';
 //import { logger } from 'redux-logger';
 
 const rootReducer = combineReducers({
   user: User,
   categories: Categories,
+  donations: Donations,
 });
 
 const configuration = {
@@ -44,5 +46,9 @@ const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 export const persistor = persistStore(store);
+//oczyszczanie całego store
+//persistor.purge()
+//reset konkretnego reducera - wywołuję z danego screen
+//dispatch(resetDonations())
 
 export default store;

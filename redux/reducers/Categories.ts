@@ -53,9 +53,14 @@ const initialState = {
       categoryId: 13,
       name: 'Art and Craft Supplies',
     },
-  ],
+  ] as CategoryType[],
   selectedCategoryId: 1,
 };
+
+export interface CategoryType {
+  categoryId: number;
+  name: string;
+}
 
 const Categories = createSlice({
   name: 'categories',
