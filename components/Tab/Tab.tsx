@@ -4,9 +4,10 @@ import style from './style';
 import { horizontalScale } from '../../assets/styles/scaling';
 
 interface Prop {
+  tabId: number;
   title: string;
   isInactive?: boolean;
-  onPress?: () => {};
+  onPress?: (tabId: number) => {};
 }
 
 const Tab: FunctionComponent<Prop> = ({
@@ -24,7 +25,7 @@ const Tab: FunctionComponent<Prop> = ({
     <Pressable
       disabled={isInactive}
       style={[style.tab, isInactive && style.inactiveTab, tabWidth]}
-      onPress={() => onPress()}
+      onPress={() => onPress(props.tabId)}
     >
       <Text
         onTextLayout={event => {

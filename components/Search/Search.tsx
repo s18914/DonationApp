@@ -9,14 +9,19 @@ import style from './style';
 interface Props {
   onSearch: (s: string) => {};
   onPress: () => {};
+  placeholder: string;
 }
 
-const Search: FunctionComponent<Props> = props => {
+const Search: FunctionComponent<Props> = ({
+  placeholder = 'Search',
+  ...props
+}) => {
   const textInputRef = useRef(null);
   const [search, setSearch] = useState('');
 
   const handleFocus = () => {
     if (textInputRef && textInputRef.current) {
+      //@ts-ignore
       textInputRef.current.focus();
     }
   };
@@ -34,6 +39,7 @@ const Search: FunctionComponent<Props> = props => {
       />
       <TextInput
         ref={textInputRef}
+        placeholder={placeholder}
         style={style.searchInput}
         value={search}
         onChangeText={value => handleSearch(value)}

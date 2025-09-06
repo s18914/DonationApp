@@ -9,10 +9,12 @@ import { persistReducer, persistStore } from 'redux-persist';
 import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import User from './reducers/User';
-import { logger } from 'redux-logger';
+import Categories from './reducers/Categories';
+//import { logger } from 'redux-logger';
 
 const rootReducer = combineReducers({
   user: User,
+  categories: Categories,
 });
 
 const configuration = {
