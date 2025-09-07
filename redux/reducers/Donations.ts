@@ -203,6 +203,7 @@ const initialState = {
     },
   ] as DonationType[],
   selectedDonationId: null,
+  selectedDonationInformation: undefined as DonationType | undefined,
 };
 
 export interface DonationType {
@@ -223,6 +224,9 @@ const Donations = createSlice({
     },
     updateSelectedDonationId: (state, action) => {
       state.selectedDonationId = action.payload;
+      state.selectedDonationInformation = state.items.find(
+        item => item.donationItemId === action.payload,
+      );
     },
   },
 });
