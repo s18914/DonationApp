@@ -19,6 +19,7 @@ const SingleDonationItem = () => {
     state => state.donations.selectedDonationInformation,
   );
 
+  //@ts-ignore
   const categoryInformation = route?.params?.categoryInformation;
 
   return (

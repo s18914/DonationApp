@@ -11,6 +11,9 @@ const globalStyle = StyleSheet.create({
   mainPadding: {
     padding: horizontalScale(25),
   },
+  marginBottom24: {
+    marginBottom: verticalScale(24),
+  },
 });
 
 export default globalStyle;
