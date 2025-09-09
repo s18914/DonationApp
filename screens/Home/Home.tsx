@@ -65,6 +65,8 @@ const Home = () => {
     return items.slice(startIndex, endIndex);
   };
 
+  console.log(user);
+
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -72,10 +74,7 @@ const Home = () => {
           <View>
             <Text style={style.headerIntroText}>Hello, </Text>
             <View style={style.username}>
-              <Header
-                title={user.firstName + ' ' + user.lastName[0] + '. 👋'}
-                type={1}
-              />
+              <Header title={user.displayName + ' 👋'} type={1} />
             </View>
           </View>
           <Image
