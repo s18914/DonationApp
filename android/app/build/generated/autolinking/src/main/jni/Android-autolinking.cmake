@@ -9,6 +9,8 @@ set(REACTNATIVE_MERGED_SO true)
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/@react-native-async-storage/async-storage/android/build/generated/source/codegen/jni/" rnasyncstorage_autolinked_build)
 
 
+
+
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-gesture-handler/android/build/generated/source/codegen/jni/" rngesturehandler_codegen_autolinked_build)
 
 add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-safe-area-context/android/src/main/jni/" safeareacontext_autolinked_build)
@@ -17,6 +19,8 @@ add_subdirectory("C:/Projekty/Private/DonationApp/node_modules/react-native-svg/
 
 set(AUTOLINKED_LIBRARIES
   react_codegen_rnasyncstorage
+  
+  
   
   
   react_codegen_rngesturehandler_codegen
