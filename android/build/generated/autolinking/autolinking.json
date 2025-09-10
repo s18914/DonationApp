@@ -185,6 +185,30 @@
         }
       }
     },
+    "react-native-radial-gradient": {
+      "root": "C:\\Projekty\\Private\\DonationApp\\node_modules\\react-native-radial-gradient",
+      "name": "react-native-radial-gradient",
+      "platforms": {
+        "ios": {
+          "podspecPath": "C:\\Projekty\\Private\\DonationApp\\node_modules\\react-native-radial-gradient\\SRSRadialGradient.podspec",
+          "version": "1.2.1",
+          "configurations": [],
+          "scriptPhases": []
+        },
+        "android": {
+          "sourceDir": "C:\\Projekty\\Private\\DonationApp\\node_modules\\react-native-radial-gradient\\android",
+          "packageImportPath": "import com.surajit.rnrg.RNRadialGradientPackage;",
+          "packageInstance": "new RNRadialGradientPackage()",
+          "buildTypes": [],
+          "componentDescriptors": [],
+          "cmakeListsPath": "C:/Projekty/Private/DonationApp/node_modules/react-native-radial-gradient/android/build/generated/source/codegen/jni/CMakeLists.txt",
+          "cxxModuleCMakeListsModuleName": null,
+          "cxxModuleCMakeListsPath": null,
+          "cxxModuleHeaderName": null,
+          "isPureCxxDependency": false
+        }
+      }
+    },
     "react-native-safe-area-context": {
       "root": "C:\\Projekty\\Private\\DonationApp\\node_modules\\react-native-safe-area-context",
       "name": "react-native-safe-area-context",

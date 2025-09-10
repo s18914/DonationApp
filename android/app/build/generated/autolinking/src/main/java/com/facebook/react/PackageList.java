@@ -24,6 +24,8 @@ import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-radial-gradient
+import com.surajit.rnrg.RNRadialGradientPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -83,6 +85,7 @@ public class PackageList {
       new RNDeviceInfo(),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
+      new RNRadialGradientPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new SvgPackage()

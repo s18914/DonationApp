@@ -12,7 +12,7 @@ interface Props {
 const BackButton: FunctionComponent<Props> = props => {
   return (
     <Pressable onPress={() => props.onPress()} style={style.container}>
-      <FontAwesomeIcon icon={faArrowLeft} />
+      <FontAwesomeIcon color="#47CC0E" icon={faArrowLeft} />
     </Pressable>
   );
 };

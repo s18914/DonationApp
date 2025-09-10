@@ -4,7 +4,7 @@ import style from './style';
 
 interface Props {
   title: string;
-  type: number;
+  type?: number;
   color?: string;
   numberOfLines?: number;
 }
@@ -12,7 +12,7 @@ interface Props {
 const Header: FunctionComponent<Props> = ({
   title = '',
   type = 1,
-  color = '#000000',
+  color = '#1f2225',
   numberOfLines,
 }) => {
   const styleToApply = () => {
@@ -23,6 +23,10 @@ const Header: FunctionComponent<Props> = ({
         return style.title2;
       case 3:
         return style.title3;
+      case 4:
+        return style.title4;
+      case 5:
+        return style.title5;
     }
   };
   return (
