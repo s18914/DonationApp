@@ -58,7 +58,7 @@ const Login = () => {
               } else {
                 setError('');
                 dispatch(logIn(user.data));
-                navigation.navigate(Routes.Home);
+                //navigation.navigate(Routes.Home as never);
               }
             }}
             title={'Login'}
@@ -67,7 +67,7 @@ const Login = () => {
         </View>
         <Pressable
           style={style.registrationButton}
-          onPress={() => navigation.navigate(Routes.Registration)}
+          onPress={() => navigation.navigate(Routes.Registration as never)}
         >
           <Header color={'#156CF7'} type={3} title={"Don't have an account?"} />
         </Pressable>

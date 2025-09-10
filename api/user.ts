@@ -1,4 +1,6 @@
 import auth from '@react-native-firebase/auth';
+import store from '../redux/store';
+import { updateToken } from '../redux/reducers/User';
 
 export const createUser = async (
   fullName: string,
@@ -22,6 +24,8 @@ export const createUser = async (
 export const loginUser = async (email: string, password: string) => {
   try {
     const response = await auth().signInWithEmailAndPassword(email, password);
+    console.log(response);
+
     const token = await response.user.getIdToken();
     return {
       status: true,
@@ -32,6 +36,7 @@ export const loginUser = async (email: string, password: string) => {
       },
     };
   } catch (error: any) {
+    console.log('LOGIN ERROR:', error);
     if (error.code === 'auth/invalid-credential') {
       return { status: false, error: 'Please enter a correct password' };
     } else if (error.code === 'auth/invalid-email') {
@@ -47,4 +52,15 @@ export const loginUser = async (email: string, password: string) => {
 
 export const logOut = async () => {
   await auth().signOut();
+};
+
+export const checkToken = async () => {
+  try {
+    let response = await auth().currentUser?.getIdToken(true);
+    console.log('We are updating token for you');
+    store.dispatch(updateToken(response));
+    return response;
+  } catch (error) {
+    return error;
+  }
 };
