@@ -6,14 +6,14 @@ export const getFontFamily = (weight: string) => {
     case '200':
       return `${baseFont}-ExtraLight`;
     case '300':
-      return `${baseFont}-Light`;
+      return `${baseFont}-Medium`;
     case 'normal':
     case '400':
-      return `${baseFont}-Regular`;
+      return `${baseFont}-Medium`;
     case '500':
       return `${baseFont}-Medium`;
     case '600':
-      return `${baseFont}-SemiBold`;
+      return `${baseFont}-Medium`;
     case 'bold':
     case '700':
       return `${baseFont}-Bold`;

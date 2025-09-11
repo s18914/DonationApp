@@ -8,8 +8,7 @@ import {
   verticalScale,
 } from '../../assets/styles/scaling';
 import Header from '../Header/Header';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import KfButton, { KFButtonTypes } from '../KfButton/KfButton';
 
 interface Props {
   title: string;
@@ -18,30 +17,48 @@ interface Props {
   icon?: string;
   color?: string;
 }
+import FaceId from '../../assets/icons/face_id';
+import StatusBar from '../StatusBar/StatusBar';
+
+export const MyComponent = () => {};
 
 const HeaderIcon: FunctionComponent<Props> = ({ title = '', ...props }) => {
   return (
-    <View style={style.container}>
-      <View style={style.background}>
-        <RadialGradient
-          style={style.gradient}
-          colors={['rgba(78, 207, 23, 0.29)', 'rgba(255, 255, 255, 1)']}
-          stops={[0, 0.8]}
-          center={[horizontalScale(155), verticalScale(210)]}
-          radius={200}
-        ></RadialGradient>
-        <FontAwesomeIcon
-          style={style.icon}
-          icon={faArrowLeft}
-          color={'#47CC0E'}
-          size={scaleFontSize(80)}
-        />
-      </View>
-      <View style={style.headers}>
-        <Header title={title} />
-        {props.title2 && <Header title={props.title2} type={5} />}
-
-        {props.title3 && <Header title={props.title3} type={5} />}
+    <View>
+      <StatusBar
+        step={2}
+        title="Aktywacja aplikacji (krok 2 z 5)"
+        onBack={function (s: string): {} {
+          throw new Error('Function not implemented.');
+        }}
+      />
+      <View style={style.container}>
+        <View style={style.background}>
+          <RadialGradient
+            style={style.gradient}
+            colors={['rgba(78, 207, 23, 0.25)', 'rgba(255, 255, 255, 1)']}
+            stops={[0, 0.8]}
+            center={[horizontalScale(155), verticalScale(210)]}
+            radius={horizontalScale(230)}
+          ></RadialGradient>
+          <FaceId
+            style={style.icon}
+            width={verticalScale(90)}
+            height={verticalScale(90)}
+            fill="#000"
+          />
+        </View>
+        <View style={style.content}>
+          <View style={style.headers}>
+            <Header title={title} />
+            {props.title2 && <Header title={props.title2} type={5} />}
+            {props.title3 && <Header title={props.title3} type={5} />}
+          </View>
+          <View style={style.buttonsContainer}>
+            <KfButton title={'Włącz Face ID'} type={KFButtonTypes.Gradient} />
+            <KfButton title={'Nie teraz'} type={KFButtonTypes.Outlined} />
+          </View>
+        </View>
       </View>
     </View>
   );

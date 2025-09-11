@@ -7,6 +7,7 @@ interface Props {
   type?: number;
   color?: string;
   numberOfLines?: number;
+  isTextCenter?: boolean;
 }
 
 const Header: FunctionComponent<Props> = ({
@@ -14,6 +15,7 @@ const Header: FunctionComponent<Props> = ({
   type = 1,
   color = '#1f2225',
   numberOfLines,
+  isTextCenter = true,
 }) => {
   const styleToApply = () => {
     switch (type) {
@@ -32,7 +34,11 @@ const Header: FunctionComponent<Props> = ({
   return (
     <View>
       <Text
-        style={[styleToApply(), color && { color: color }]}
+        style={[
+          styleToApply(),
+          color && { color: color },
+          isTextCenter && { textAlign: 'center' },
+        ]}
         numberOfLines={numberOfLines ? numberOfLines : undefined}
       >
         {title}

@@ -5,17 +5,16 @@ import {
   verticalScale,
 } from '../../assets/styles/scaling';
 import { getFontFamily } from '../../assets/fonts/helper';
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 const style = StyleSheet.create({
   background: {
     width: '100%',
-    height: verticalScale(50),
+    height: verticalScale(60),
     display: 'flex',
     borderRadius: horizontalScale(8),
   },
   pressable: {
-    height: verticalScale(50),
+    height: verticalScale(60),
     justifyContent: 'center',
     display: 'flex',
     flexDirection: 'row',

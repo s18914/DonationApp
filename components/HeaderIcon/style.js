@@ -9,8 +9,9 @@ import { getFontFamily } from '../../assets/fonts/helper';
 const style = StyleSheet.create({
   container: {
     width: '100%',
-    height: verticalScale(570),
+    height: verticalScale(800),
     display: 'flex',
+
     padding: verticalScale(30),
     justifyContent: 'flex-end',
     alignItems: 'left',
@@ -32,9 +33,23 @@ const style = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  headers: {
-    height: '50%',
+  content: {
+    display: 'flex',
+    gap: verticalScale(10),
+    height: '60%',
     alignSelf: 'end',
+    justifyContent: 'space-between',
+  },
+  headers: {
+    display: 'flex',
+    gap: verticalScale(10),
+    height: 'auto',
+    alignSelf: 'end',
+    justifyContent: 'space-between',
+  },
+  buttonsContainer: {
+    display: 'flex',
+    gap: 10,
   },
 });
 
